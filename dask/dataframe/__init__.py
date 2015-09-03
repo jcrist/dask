@@ -8,5 +8,6 @@ from .rolling import (rolling_count, rolling_sum, rolling_mean, rolling_median,
                       rolling_min, rolling_max, rolling_std, rolling_var,
                       rolling_skew, rolling_kurt, rolling_quantile, rolling_apply,
                       rolling_window)
+from .expanding import expanding_sum, expanding_count, expanding_mean
 from ..base import compute
 from . import demo
