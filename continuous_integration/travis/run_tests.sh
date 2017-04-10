@@ -6,7 +6,7 @@ if [[ $PARALLEL == 'true' ]]; then
 fi
 
 if [[ $COVERAGE == 'true' ]]; then
-    coverage run `which py.test` dask --runslow --doctest-modules --verbose $XTRATESTARGS
+    coverage run `which py.test` -s --runslow --doctest-modules --verbose $XTRATESTARGS dask/tests/test_threaded.py
 else
-    py.test dask --runslow --verbose $XTRATESTARGS
+    py.test -s --runslow --verbose $XTRATESTARGS dask/tests/test_threaded.py
 fi

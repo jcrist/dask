@@ -147,8 +147,9 @@ def test_interrupt():
             proc.send_signal(sigint)
             # Wait a bit for it to die
             start = time()
-            while time() - start < 2.0:
+            while time() - start < 5.0:
                 if proc.poll() is not None:
+                    print("Stopped at: %.3f" % (time() - start))
                     break
                 sleep(0.05)
             else:
