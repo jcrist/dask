@@ -1,3 +1,4 @@
+from __future__ import print_function
 import os
 import threading
 import signal
@@ -149,7 +150,7 @@ def test_interrupt():
             start = time()
             while time() - start < 5.0:
                 if proc.poll() is not None:
-                    print("Stopped at: %.3f" % (time() - start))
+                    print("Stopped at: %.3f" % (time() - start), file=sys.stderr)
                     break
                 sleep(0.05)
             else:
